@@ -1,9 +1,5 @@
 ---
-name: Build and push latest Fedora container
-
-env:
-  FEDORA_VERSION: 37
-
+name: Build and push Fedora 37 container
 
 on:
   pull_request:
@@ -14,7 +10,7 @@ on:
     - cron: "10 2 * * 0"
 
 jobs:
-  release-latest:
+  release-37:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -40,10 +36,10 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v3
         with:
-          context: ./$FEDORA_VERSION
-          file: ./$FEDORA_VERSION/Dockerfile
+          context: ./37
+          file: ./37/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
             ${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:$latest
+            ghcr.io/${{ github.repository }}:latest

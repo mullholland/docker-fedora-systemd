@@ -1,10 +1,6 @@
 ---
 name: Build and push Fedora 38 container
 
-env:
-  FEDORA_VERSION: 38
-
-
 on:
   pull_request:
   push:
@@ -40,10 +36,10 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v3
         with:
-          context: ./$FEDORA_VERSION
-          file: ./$FEDORA_VERSION/Dockerfile
+          context: ./38
+          file: ./38/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ github.repository }}:$FEDORA_VERSION
-            ghcr.io/${{ github.repository }}:$FEDORA_VERSION
+            ${{ github.repository }}:38
+            ghcr.io/${{ github.repository }}:38
