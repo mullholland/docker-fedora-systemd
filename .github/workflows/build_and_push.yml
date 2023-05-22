@@ -18,7 +18,23 @@ jobs:
 
     strategy:
       matrix:
-        version: [36, 37, 38]
+        include:
+          - context: 36
+            tags: |
+              ${{ github.repository }}:36
+              ghcr.io/${{ github.repository }}:36
+          - context: 37
+            tags: |
+              ${{ github.repository }}:37
+              ghcr.io/${{ github.repository }}:37
+              ${{ github.repository }}:latest
+              ghcr.io/${{ github.repository }}:latest
+          - context: 38
+            tags: |
+              ${{ github.repository }}:38
+              ghcr.io/${{ github.repository }}:38
+              ${{ github.repository }}:rawhide
+              ghcr.io/${{ github.repository }}:rawhide
 
     steps:
       - uses: actions/checkout@v3
@@ -41,10 +57,8 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v3
         with:
-          context: ./${{ matrix.version }}
-          file: ./${{ matrix.version }}/Dockerfile
+          context: ./${{ matrix.context }}
+          file: ./${{ matrix.context }}/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: |
-            ${{ github.repository }}:${{ matrix.version }}
-            ghcr.io/${{ github.repository }}:${{ matrix.version }}
+          tags: ${{ matrix.tags }}
