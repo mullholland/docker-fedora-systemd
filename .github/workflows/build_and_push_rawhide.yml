@@ -1,5 +1,6 @@
 ---
-name: Build and push Fedora 38 container
+name: Build and push Fedora 36
+ container
 
 on:
   pull_request:
@@ -10,10 +11,14 @@ on:
     - cron: "10 2 * * 0"
 
 jobs:
-  release-38:
+  build-and-push-rawhode:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
+
+    strategy:
+      matrix:
+        version: [38]
 
     steps:
       - uses: actions/checkout@v3
@@ -36,10 +41,10 @@ jobs:
       - name: Build and push image.
         uses: docker/build-push-action@v3
         with:
-          context: ./38
-          file: ./38/Dockerfile
+          context: ./${{ matrix.version }}
+          file: ./${{ matrix.version }}/Dockerfile
           platforms: linux/amd64
           push: true
           tags: |
-            ${{ github.repository }}:38
-            ghcr.io/${{ github.repository }}:38
+            ${{ github.repository }}:rawhide
+            ghcr.io/${{ github.repository }}:rawhide
