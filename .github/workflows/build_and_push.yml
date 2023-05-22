@@ -1,6 +1,5 @@
 ---
-name: Build and push Fedora matrix
- container
+name: Build and push
 
 on:
   pull_request:

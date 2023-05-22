@@ -3,8 +3,6 @@ Docker Fedora Systemd
 
 This Dockerfile can build containers capable to use systemd.
 
-[![fedora build status](https://img.shields.io/docker/cloud/build/mullholland/fedora.svg)](https://hub.docker.com/repository/docker/mullholland/fedora)
-
 Branches
 --------
 
@@ -24,5 +22,5 @@ docker run \
   --tty \
   --privileged \
   --volume /sys/fs/cgroup:/sys/fs/cgroup:ro \
-  mullholland/fedora
+  mullholland/docker-fedora-systemd
 ```
