@@ -1,5 +1,5 @@
 ---
-name: Build and push Fedora 36
+name: Build and push Fedora rawhide
  container
 
 on:
