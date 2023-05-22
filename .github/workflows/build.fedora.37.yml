@@ -14,7 +14,7 @@ on:
     - cron: "10 2 * * 0"
 
 jobs:
-  release:
+  release-37:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -44,4 +44,6 @@ jobs:
           file: ./$FEDORA_VERSION/Dockerfile
           platforms: linux/amd64
           push: true
-          tags: mullholland/fedora:$FEDORA_VERSION
+          tags: |
+            ${{ github.repository }}:$FEDORA_VERSION
+            ghcr.io/${{ github.repository }}:$FEDORA_VERSION

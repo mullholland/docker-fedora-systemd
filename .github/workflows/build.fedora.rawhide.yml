@@ -14,7 +14,7 @@ on:
     - cron: "10 2 * * 0"
 
 jobs:
-  release:
+  release-rawhide:
     name: Release
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -45,5 +45,5 @@ jobs:
           platforms: linux/amd64
           push: true
           tags: |
-            mullholland/fedora:$FEDORA_VERSION
-            ghcr.io/${{ github.repository }}:$FEDORA_VERSION
+            ${{ github.repository }}:rawhide
+            ghcr.io/${{ github.repository }}:$rawhide
