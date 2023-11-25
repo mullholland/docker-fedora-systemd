@@ -1,4 +1,4 @@
-FROM fedora:36
+FROM fedora:39
 
 LABEL maintainer="mullholland"
 LABEL build_date="2023-11-25"
