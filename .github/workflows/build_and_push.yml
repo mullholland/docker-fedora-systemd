@@ -18,20 +18,20 @@ jobs:
     strategy:
       matrix:
         include:
-          - context: 36
-            tags: |
-              ${{ github.repository }}:36
-              ghcr.io/${{ github.repository }}:36
-          - context: 37
-            tags: |
-              ${{ github.repository }}:37
-              ghcr.io/${{ github.repository }}:37
-              ${{ github.repository }}:latest
-              ghcr.io/${{ github.repository }}:latest
           - context: 38
             tags: |
               ${{ github.repository }}:38
               ghcr.io/${{ github.repository }}:38
+          - context: 39
+            tags: |
+              ${{ github.repository }}:39
+              ghcr.io/${{ github.repository }}:39
+              ${{ github.repository }}:latest
+              ghcr.io/${{ github.repository }}:latest
+          - context: 40
+            tags: |
+              ${{ github.repository }}:40
+              ghcr.io/${{ github.repository }}:40
               ${{ github.repository }}:rawhide
               ghcr.io/${{ github.repository }}:rawhide
 

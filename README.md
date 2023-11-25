@@ -10,9 +10,9 @@ This repository has multiple tags that relate to Fedora versions.
 
 Fedora Version|Docker image tag|
 |--------------|----------------|
-|36            |36              |
-|latest (37)   |37, latest      |
-|rawhide (38)  |38, rawhide     |
+| 38           | 38             |
+| latest (39)  | 39, latest     |
+| rawhide (40) | 40, rawhide    |
 
 Manually starting
 -----------------
