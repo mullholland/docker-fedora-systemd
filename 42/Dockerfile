@@ -1,12 +1,12 @@
-FROM fedora:39
+FROM fedora:41
 
 LABEL maintainer="mullholland"
-LABEL build_date="2023-11-25"
+LABEL build_date="2024-06-23"
 
 ENV container=docker
 
 # Enable systemd.
-RUN dnf -y install systemd && dnf clean all && \
+RUN dnf --nogpgcheck -y install systemd && dnf clean all && \
   (cd /lib/systemd/system/sysinit.target.wants/ ; for i in * ; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i ; done) ; \
   rm -f /lib/systemd/system/multi-user.target.wants/* ;\
   rm -f /etc/systemd/system/*.wants/* ;\
@@ -19,7 +19,7 @@ RUN dnf -y install systemd && dnf clean all && \
 # Install requirements.
 RUN dnf makecache \
  && dnf upgrade -y \
- && dnf -y install \
+ && dnf --nogpgcheck -y install \
       sudo \
       which \
       ca-certificates \

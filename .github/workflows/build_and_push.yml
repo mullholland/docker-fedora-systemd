@@ -18,22 +18,16 @@ jobs:
     strategy:
       matrix:
         include:
-          - context: 39
-            tags: |
-              ${{ github.repository }}:39
-              ghcr.io/${{ github.repository }}:39
-          - context: 40
-            tags: |
-              ${{ github.repository }}:40
-              ghcr.io/${{ github.repository }}:40
-              ${{ github.repository }}:latest
-              ghcr.io/${{ github.repository }}:latest
           - context: 41
             tags: |
               ${{ github.repository }}:41
               ghcr.io/${{ github.repository }}:41
-              ${{ github.repository }}:rawhide
-              ghcr.io/${{ github.repository }}:rawhide
+          - context: 42
+            tags: |
+              ${{ github.repository }}:42
+              ghcr.io/${{ github.repository }}:42
+              ${{ github.repository }}:latest
+              ghcr.io/${{ github.repository }}:latest
 
     steps:
       - uses: actions/checkout@v4
