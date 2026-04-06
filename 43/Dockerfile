@@ -25,7 +25,9 @@ RUN dnf makecache \
       ca-certificates \
       iproute \
       util-linux \
- && dnf clean all
+      python3 \
+      python3-pip \
+  && dnf clean all
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers

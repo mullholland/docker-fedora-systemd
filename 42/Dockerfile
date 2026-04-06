@@ -25,6 +25,8 @@ RUN dnf makecache \
       ca-certificates \
       iproute \
       util-linux \
+      python3 \
+      python3-pip \
  && dnf clean all
 
 # Disable requiretty.
