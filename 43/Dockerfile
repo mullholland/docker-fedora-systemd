@@ -27,6 +27,7 @@ RUN dnf makecache \
       util-linux \
       python3 \
       python3-pip \
+      python3-libdnf5 \
   && dnf clean all
 
 # Disable requiretty.
