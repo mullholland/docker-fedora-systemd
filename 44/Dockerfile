@@ -1,4 +1,4 @@
-FROM fedora:42
+FROM fedora:44
 
 LABEL maintainer="mullholland"
 LABEL build_date="2026-08-23"
@@ -28,7 +28,7 @@ RUN dnf makecache \
       python3 \
       python3-pip \
       python3-libdnf5 \
- && dnf clean all
+  && dnf clean all
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers

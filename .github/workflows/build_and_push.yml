@@ -18,14 +18,14 @@ jobs:
     strategy:
       matrix:
         include:
-          - context: 42
-            tags: |
-              ${{ github.repository }}:42
-              ghcr.io/${{ github.repository }}:42
           - context: 43
             tags: |
               ${{ github.repository }}:43
               ghcr.io/${{ github.repository }}:43
+          - context: 44
+            tags: |
+              ${{ github.repository }}:44
+              ghcr.io/${{ github.repository }}:44
               ${{ github.repository }}:latest
               ghcr.io/${{ github.repository }}:latest
 

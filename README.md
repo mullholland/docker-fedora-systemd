@@ -10,8 +10,8 @@ This repository has multiple tags that relate to Fedora versions.
 
 Fedora Version|Docker image tag|
 |--------------|----------------|
-| 42           | 42             |
-| 43           | 43, latest     |
+| 43           | 43             |
+| 44           | 44, latest     |
 
 Manually starting
 -----------------
