@@ -18,7 +18,7 @@ jobs:
       matrix:
         context: [43, 44]
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Build image
         run: docker build -t smoke-test:${{ matrix.context }} ./${{ matrix.context }}
       - name: Boot container like Molecule's docker driver
