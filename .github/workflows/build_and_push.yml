@@ -16,7 +16,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        context: [43, 44]
+        context: [43, 44, 45]
     steps:
       - uses: actions/checkout@v7
       - name: Build image
@@ -68,6 +68,10 @@ jobs:
             tags: |
               ${{ github.repository }}:44
               ghcr.io/${{ github.repository }}:44
+          - context: 45
+            tags: |
+              ${{ github.repository }}:45
+              ghcr.io/${{ github.repository }}:45
               ${{ github.repository }}:latest
               ghcr.io/${{ github.repository }}:latest
 

@@ -11,7 +11,8 @@ This repository has multiple tags that relate to Fedora versions.
 Fedora Version|Docker image tag|
 |--------------|----------------|
 | 43           | 43             |
-| 44           | 44, latest     |
+| 44           | 44             |
+| 45           | 45, latest     |
 
 Manually starting
 -----------------
